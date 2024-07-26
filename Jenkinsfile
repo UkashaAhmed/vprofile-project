@@ -201,7 +201,7 @@ pipeline {
                             //     type: pom.packaging],
                                
                             // ]
-                        );
+                        )
                     
 		   
             }
