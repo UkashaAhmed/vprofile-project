@@ -87,11 +87,16 @@ pipeline {
                             version: "${env.BUILD_ID}-${env.BUILD_TIMESTAMP}",
                             repository: "${RELEASE_REPO}",
                             credentialsId: "${NEXUS_LOGIN}",
-                            artifacts: 
-                                [artifactId: 'vprofile',
+                            artifacts: [
+                                [artifactId: pom.artifactId,
                                 classifier: '',
-                                file: 'target/vprofile-v2.war',
-                                type: 'war']
+                                file: artifactPath,
+                                type: pom.packaging],
+                                [artifactId: pom.artifactId,
+                                classifier: '',
+                                file: "pom.xml",
+                                type: "pom"]
+                            ]
                                 
                             
                         );
